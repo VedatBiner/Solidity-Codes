@@ -3,22 +3,30 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Odemeler {
-    
+
+    address public owner;
     address payable public investor;
+
+    // modifier
+    modifier onlyOwner(){
+        require(msg.sender == owner, "Ancak kontratin sahibi cagirabilir... ");
+        _;
+    }
 
     function payMoney() external payable{
 
     }
+
+    constructor() public {
+        owner = msg.sender;
+    }
     
-    function getBalance() public view returns(uint) {
+    function getBalance() public onlyOwner view returns(uint) {
         return address(this).balance;
     }
 
-    fallback() external payable{
-        
-    }
-
-    function sendMoney() external payable{
+    function sendMoney() external onlyOwner payable{
+      
         investor = payable(0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
         investor.transfer(2 ether);
 
