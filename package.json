@@ -1,0 +1,28 @@
+{
+  "name": "web3",
+  "version": "1.0.0",
+  "description": "simple web3 application",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node call.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VedatBiner/Solidity-Codes.git"
+  },
+  "keywords": [
+    "solidity"
+  ],
+  "author": "vedat biner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VedatBiner/Solidity-Codes/issues"
+  },
+  "homepage": "https://github.com/VedatBiner/Solidity-Codes#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "solc": "^0.8.3",
+    "web3": "^1.7.1"
+  }
+}
